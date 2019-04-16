@@ -41,7 +41,7 @@ class MyGLSurfaceView extends GLSurfaceView {
 }
 
 class MyGLRenderer implements GLSurfaceView.Renderer {
-    private final Context context;
+   // private final Context context;
     private final Triangle triangle = new Triangle();
 
 
@@ -55,9 +55,9 @@ class MyGLRenderer implements GLSurfaceView.Renderer {
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         //triangle.draw(gl);
     }
-    MyGLRenderer(Context context) {
-        this.context = context;
-    }
+    //MyGLRenderer(Context context) {
+      //  this.context = context;
+    //}
     //MyglrendererloadTexture(gl, context);
     @Override
     public void onSurfaceCreated(GL10 gl, javax.microedition.khronos.egl.EGLConfig config) {
