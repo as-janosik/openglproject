@@ -22,12 +22,12 @@ public class Triangle {
     static final int COORDS_PER_VERTEX = 3;
     static float triangleCoords[] = {   // in counterclockwise order:
             0.0f,  0.622008459f, 0.0f, // top
-            -0.5f, -0.311004243f, 0.0f, // bottom left
-            0.5f, -0.311004243f, 0.0f  // bottom right
+            -0.5f, -0.811004243f, 0.0f, // bottom left
+            0.5f, -0.811004243f, 0.0f  // bottom right
     };
 
     // Set color with red, green, blue and alpha (opacity) values
-    float color[] = { 0.63671875f, 0.76953125f, 0.22265625f, 1.0f };
+    float color[] = { 0.33671875f, 0.36953125f, 0.22265625f, 1.0f };
 
     public Triangle() {
         // initialize vertex byte buffer for shape coordinates
