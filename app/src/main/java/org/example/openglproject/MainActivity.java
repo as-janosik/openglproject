@@ -42,7 +42,22 @@ class MyGLSurfaceView extends GLSurfaceView {
 
 class MyGLRenderer implements GLSurfaceView.Renderer {
    // private final Context context;
-    private final Triangle triangle = new Triangle();
+    //private final Triangle triangle = new Triangle();
+    Triangle mTriangle;
+
+
+    public static int loadShader(int type, String shaderCode){
+
+        // create a vertex shader type (GLES20.GL_VERTEX_SHADER)
+        // or a fragment shader type (GLES20.GL_FRAGMENT_SHADER)
+        int shader = GLES20.glCreateShader(type);
+
+        // add the source code to the shader and compile it
+        GLES20.glShaderSource(shader, shaderCode);
+        GLES20.glCompileShader(shader);
+
+        return shader;
+    }
 
 
     //public void onSurfaceCreated(GL10 unused, EGLConfig config) {
@@ -53,6 +68,10 @@ class MyGLRenderer implements GLSurfaceView.Renderer {
     public void onDrawFrame(GL10 unused) {
         // Redraw background color
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
+        mTriangle.draw();
+
+        //Triangle mTriangle;
+
         //triangle.draw(gl);
     }
     //MyGLRenderer(Context context) {
@@ -62,6 +81,9 @@ class MyGLRenderer implements GLSurfaceView.Renderer {
     @Override
     public void onSurfaceCreated(GL10 gl, javax.microedition.khronos.egl.EGLConfig config) {
         GLES20.glClearColor(255.0f, 0.0f, 0.0f, 1.0f);
+        // initialize a triangle
+        mTriangle = new Triangle();
+
     }
 
     public void onSurfaceChanged(GL10 unused, int width, int height) {
